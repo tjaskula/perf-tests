@@ -20,9 +20,10 @@ namespace perf_tests_csharp.Challenge5
         public static int NbElements { get; set; }
 
         [Setup]
-        public void SetupBenchmark3()
+        public void SetupBenchmark5()
         {
             var values = Enumerable.Range(0, NbElements).ToList();
+            _rdn = new Random();
             _value = _rdn.Next(0, NbElements);
             _items1 = values;
             _items2 = new LinkedList<int>(values);
