@@ -28,6 +28,7 @@ namespace perf_tests_csharp
                 typeof(Benchmark7),
                 typeof(Benchmark8)
             });
+
             switcher.Run(args);
         }
     }
