@@ -1,4 +1,7 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Attributes.Exporters;
 
 namespace perf_tests_csharp.Challenge1
@@ -6,26 +9,27 @@ namespace perf_tests_csharp.Challenge1
     [MarkdownExporter, AsciiDocExporter, HtmlExporter, CsvExporter, RPlotExporter]
     public class Benchmark1
     {
+        private Random _rdn;
+        private int _value;
+        private HashSet<int> _items1;
+        private List<int> _items2;
+
         [Params(10, 20, 200, 2000, 20000, 200000, 2000000)]
-        public static int EnumerableRange { get; set; }
+        public static int Range { get; set; }
 
-        [Params(25, 50, 500, 5000, 50000, 500000, 5000000)]
-        public static int RandomRange { get; set; }
-
-        [Benchmark]
-        public void BenchmarkLeft()
+        [Setup]
+        public void SetupBenchmark1()
         {
-            Left.EnumerableRange = EnumerableRange;
-            Left.RandomRange = RandomRange;
-            Left.Run();
+            _items1 = new HashSet<int>(Enumerable.Range(0, Range));
+            _items2 = new List<int>(Enumerable.Range(0, Range));
+            _rdn = new Random();
+            _value = _rdn.Next(0, (int)(Range * 2.5));
         }
 
         [Benchmark]
-        public void BenchmarkRight()
-        {
-            Right.EnumerableRange = EnumerableRange;
-            Right.RandomRange = RandomRange;
-            Right.Run();
-        }
+        public void BenchmarkLeft() => Left.Run(_value, _items1);
+
+        [Benchmark]
+        public void BenchmarkRight() => Right.Run(_value, _items2);
     }
 }
