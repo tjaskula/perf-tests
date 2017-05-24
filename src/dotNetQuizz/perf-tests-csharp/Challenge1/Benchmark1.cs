@@ -20,8 +20,9 @@ namespace perf_tests_csharp.Challenge1
         [Setup]
         public void SetupBenchmark1()
         {
-            _items1 = new HashSet<int>(Enumerable.Range(0, Range));
-            _items2 = new List<int>(Enumerable.Range(0, Range));
+            var range = Enumerable.Range(0, Range).ToList();
+            _items1 = new HashSet<int>(range);
+            _items2 = new List<int>(range);
             _rdn = new Random();
             _value = _rdn.Next(0, (int)(Range * 2.5));
         }
