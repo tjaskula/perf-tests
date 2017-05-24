@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BenchmarkDotNet.Running;
+using perf_tests_csharp.Challenge1;
 
 namespace perf_tests_csharp
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            var result = BenchmarkRunner.Run<Benchmark1>();
         }
     }
 }
