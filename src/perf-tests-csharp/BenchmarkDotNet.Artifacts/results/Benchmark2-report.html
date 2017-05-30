@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchmark2</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.6, OS=Windows 10 Redstone 1 (10.0.14393)
+Processor=Intel Core i7-3720QM CPU 2.60GHz (Ivy Bridge), ProcessorCount=4
+Frequency=2533285 Hz, Resolution=394.7444 ns, Timer=TSC
+  [Host]     : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1648.0
+  DefaultJob : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1648.0
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>NbElements</th><th>    Mean</th><th>  Error</th><th> StdDev</th><th>     Min</th><th>     Max</th>
+</tr>
+</thead><tbody><tr><td>HashSet</td><td>  10</td><td>8.581 ns</td><td>0.1869 ns</td><td>0.1657 ns</td><td>8.356 ns</td><td>8.949 ns</td>
+</tr><tr><td>List</td><td>  10</td><td>10.528 ns</td><td>0.2498 ns</td><td>0.4930 ns</td><td>9.528 ns</td><td>11.467 ns</td>
+</tr><tr><td>HashSet</td><td>  20</td><td>11.763 ns</td><td>0.3035 ns</td><td>0.5847 ns</td><td>11.261 ns</td><td>13.925 ns</td>
+</tr><tr><td>List</td><td>  20</td><td>11.643 ns</td><td>0.2998 ns</td><td>0.2658 ns</td><td>11.389 ns</td><td>12.347 ns</td>
+</tr><tr><td>HashSet</td><td> 200</td><td>138.401 ns</td><td>1.9010 ns</td><td>1.7782 ns</td><td>135.131 ns</td><td>140.972 ns</td>
+</tr><tr><td>List</td><td> 200</td><td>12.432 ns</td><td>0.2874 ns</td><td>0.4880 ns</td><td>11.569 ns</td><td>13.604 ns</td>
+</tr><tr><td>HashSet</td><td>2000</td><td>1,305.818 ns</td><td>25.3424 ns</td><td>23.7053 ns</td><td>1,282.679 ns</td><td>1,370.554 ns</td>
+</tr><tr><td>List</td><td>2000</td><td>12.159 ns</td><td>0.3253 ns</td><td>0.4114 ns</td><td>11.630 ns</td><td>13.253 ns</td>
+</tr><tr><td>HashSet</td><td>20000</td><td>1,885.631 ns</td><td>33.2162 ns</td><td>31.0705 ns</td><td>1,841.559 ns</td><td>1,935.949 ns</td>
+</tr><tr><td>List</td><td>20000</td><td>10.077 ns</td><td>0.2314 ns</td><td>0.2476 ns</td><td>9.738 ns</td><td>10.660 ns</td>
+</tr><tr><td>HashSet</td><td>200000</td><td>130,185.040 ns</td><td>2,579.4426 ns</td><td>2,412.8120 ns</td><td>127,679.056 ns</td><td>136,880.667 ns</td>
+</tr><tr><td>List</td><td>200000</td><td>9.684 ns</td><td>0.1219 ns</td><td>0.1081 ns</td><td>9.552 ns</td><td>9.967 ns</td>
+</tr><tr><td>HashSet</td><td>2000000</td><td>549,848.359 ns</td><td>3,204.4511 ns</td><td>2,675.8616 ns</td><td>545,933.415 ns</td><td>555,998.626 ns</td>
+</tr><tr><td>List</td><td>2000000</td><td>10.130 ns</td><td>0.2421 ns</td><td>0.2265 ns</td><td>9.745 ns</td><td>10.519 ns</td>
+</tr></tbody></table>
+</body>
+</html>
