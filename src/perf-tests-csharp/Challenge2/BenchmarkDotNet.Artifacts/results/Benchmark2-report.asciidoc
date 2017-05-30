@@ -1,0 +1,26 @@
+....
+BenchmarkDotNet=v0.10.6, OS=Windows 10 Redstone 1 (10.0.14393)
+Processor=Intel Core i7-3720QM CPU 2.60GHz (Ivy Bridge), ProcessorCount=4
+Frequency=2533285 Hz, Resolution=394.7444 ns, Timer=TSC
+  [Host]     : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1648.0
+  DefaultJob : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1648.0
+
+....
+[options="header"]
+|===
+|      Method|  NbElements|              Mean|           Error|          StdDev|               Min|               Max
+|  UnsafeLoop|          10|          8.780 ns|       0.2074 ns|       0.2305 ns|          8.366 ns|          9.314 ns
+|     HashSet|          10|         12.222 ns|       0.2732 ns|       0.2805 ns|         11.696 ns|         12.741 ns
+|  UnsafeLoop|          20|         15.108 ns|       0.4168 ns|       0.5271 ns|         14.498 ns|         16.445 ns
+|     HashSet|          20|          9.911 ns|       0.2385 ns|       0.2929 ns|          9.564 ns|         10.645 ns
+|  UnsafeLoop|         200|        139.354 ns|       2.8914 ns|       3.4421 ns|        135.376 ns|        148.257 ns
+|     HashSet|         200|          9.975 ns|       0.2363 ns|       0.2321 ns|          9.686 ns|         10.476 ns
+|  UnsafeLoop|        2000|      1,030.640 ns|      16.5910 ns|      14.7075 ns|      1,001.766 ns|      1,058.367 ns
+|     HashSet|        2000|         12.210 ns|       0.2936 ns|       0.6506 ns|         11.521 ns|         13.997 ns
+|  UnsafeLoop|       20000|      2,525.343 ns|      48.9385 ns|      54.3950 ns|      2,460.319 ns|      2,662.460 ns
+|     HashSet|       20000|          9.956 ns|       0.1755 ns|       0.1556 ns|          9.633 ns|         10.308 ns
+|  UnsafeLoop|      200000|    127,719.235 ns|   2,995.8026 ns|   2,802.2754 ns|    123,691.583 ns|    134,493.856 ns
+|     HashSet|      200000|          9.660 ns|       0.0776 ns|       0.0688 ns|          9.578 ns|          9.834 ns
+|  UnsafeLoop|     2000000|  1,420,340.398 ns|  26,692.6774 ns|  26,215.7758 ns|  1,381,290.822 ns|  1,480,138.051 ns
+|     HashSet|     2000000|         11.861 ns|       0.1820 ns|       0.1702 ns|         11.568 ns|         12.117 ns
+|===
