@@ -30,9 +30,9 @@ namespace perf_tests_csharp.Challenge2
         }
 
         [Benchmark]
-        public void HashSet() => Left.Run(_value, _items1);
+        public void UnsafeLoop() => Left.Run(_value, _items1);
 
         [Benchmark]
-        public void List() => Right.Run(_value, _items2);
+        public void HashSet() => Right.Run(_value, _items2);
     }
 }
