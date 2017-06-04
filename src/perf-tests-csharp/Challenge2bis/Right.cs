@@ -6,7 +6,7 @@ namespace perf_tests_csharp.Challenge2bis
     {
         public static void Run(int value, List<int> items)
         {
-            var hasValue = items.Contains(value);
+            items.Contains(value);
         }
     }
 }
