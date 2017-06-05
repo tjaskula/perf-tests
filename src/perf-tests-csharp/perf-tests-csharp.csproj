@@ -168,6 +168,7 @@
     <Compile Include="Challenge2\Benchmark2.cs" />
     <Compile Include="Challenge2\Left.cs" />
     <Compile Include="Challenge2\Right.cs" />
+    <Compile Include="Challenge3\Benchmark3.cs" />
     <Compile Include="Challenge3\Left.cs" />
     <Compile Include="Challenge3\Right.cs" />
     <Compile Include="Program.cs" />
