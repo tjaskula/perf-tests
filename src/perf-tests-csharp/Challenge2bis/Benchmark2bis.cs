@@ -20,7 +20,7 @@ namespace perf_tests_csharp.Challenge2bis
         public static int NbElements { get; set; }
 
         [Setup]
-        public void SetupBenchmark1()
+        public void SetupBenchmark2bis()
         {
             var range = Enumerable.Range(0, NbElements).ToArray();
             _items1 = range;
