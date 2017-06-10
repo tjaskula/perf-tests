@@ -171,6 +171,9 @@
     <Compile Include="Challenge3\Benchmark3.cs" />
     <Compile Include="Challenge3\Left.cs" />
     <Compile Include="Challenge3\Right.cs" />
+    <Compile Include="Challenge4\Benchmark4.cs" />
+    <Compile Include="Challenge4\Left.cs" />
+    <Compile Include="Challenge4\Right.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
