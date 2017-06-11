@@ -3,6 +3,7 @@ using perf_tests_csharp.Challenge1;
 using perf_tests_csharp.Challenge2;
 using perf_tests_csharp.Challenge2bis;
 using perf_tests_csharp.Challenge3;
+using perf_tests_csharp.Challenge4;
 
 namespace perf_tests_csharp
 {
@@ -14,7 +15,8 @@ namespace perf_tests_csharp
                 typeof(Benchmark1),
                 typeof(Benchmark2),
                 typeof(Benchmark2bis),
-                typeof(Benchmark3)
+                typeof(Benchmark3),
+                typeof(Benchmark4)
             });
             switcher.Run(args);
         }
