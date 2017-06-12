@@ -25,9 +25,9 @@ namespace perf_tests_csharp.Challenge4
         }
 
         [Benchmark]
-        public void Double() => Left.Run(_items1);
+        public void List() => Left.Run(_items1);
 
         [Benchmark]
-        public void Decimal() => Right.Run(_items2);
+        public void LinkedList() => Right.Run(_items2);
     }
 }
