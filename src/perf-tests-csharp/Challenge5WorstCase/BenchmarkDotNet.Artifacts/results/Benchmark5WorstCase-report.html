@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchmark5WorstCase</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.6, OS=Windows 7 SP1 (6.1.7601)
+Processor=Intel Core i7-6600U CPU 2.60GHz (Skylake), ProcessorCount=4
+Frequency=2742294 Hz, Resolution=364.6582 ns, Timer=TSC
+  [Host]     : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1098.0
+  DefaultJob : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1098.0
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>NbElements</th><th>     Mean</th><th>   Error</th><th>  StdDev</th><th>   Median</th><th>      Min</th><th>      Max</th>
+</tr>
+</thead><tbody><tr><td>List</td><td>  10</td><td>136.23 ns</td><td>2.7111 ns</td><td>5.7186 ns</td><td>135.18 ns</td><td>126.97 ns</td><td>150.91 ns</td>
+</tr><tr><td>LinkedList</td><td>  10</td><td> 44.28 ns</td><td>0.8098 ns</td><td>1.2121 ns</td><td> 44.00 ns</td><td> 42.45 ns</td><td> 46.92 ns</td>
+</tr><tr><td>List</td><td>  20</td><td>141.51 ns</td><td>2.7475 ns</td><td>2.8215 ns</td><td>141.51 ns</td><td>136.94 ns</td><td>146.42 ns</td>
+</tr><tr><td>LinkedList</td><td>  20</td><td> 42.67 ns</td><td>0.6749 ns</td><td>0.6313 ns</td><td> 42.62 ns</td><td> 41.64 ns</td><td> 43.72 ns</td>
+</tr><tr><td>List</td><td> 200</td><td>223.89 ns</td><td>12.2220 ns</td><td>12.0037 ns</td><td>220.43 ns</td><td>213.11 ns</td><td>249.63 ns</td>
+</tr><tr><td>LinkedList</td><td> 200</td><td> 42.28 ns</td><td>0.4669 ns</td><td>0.4367 ns</td><td> 42.31 ns</td><td> 41.62 ns</td><td> 43.28 ns</td>
+</tr><tr><td>List</td><td>2000</td><td>910.30 ns</td><td>19.2966 ns</td><td>34.2997 ns</td><td>900.34 ns</td><td>875.66 ns</td><td>1,017.99 ns</td>
+</tr><tr><td>LinkedList</td><td>2000</td><td> 44.22 ns</td><td>1.1710 ns</td><td>3.4344 ns</td><td> 42.49 ns</td><td> 40.90 ns</td><td> 53.57 ns</td>
+</tr><tr><td>List</td><td>20000</td><td>9,304.11 ns</td><td>106.4983 ns</td><td>94.4079 ns</td><td>9,318.81 ns</td><td>9,101.47 ns</td><td>9,471.56 ns</td>
+</tr><tr><td>LinkedList</td><td>20000</td><td> 45.51 ns</td><td>0.6995 ns</td><td>0.8590 ns</td><td> 45.49 ns</td><td> 44.02 ns</td><td> 47.20 ns</td>
+</tr><tr><td>List</td><td>200000</td><td>101,506.22 ns</td><td>2,508.9506 ns</td><td>6,993.9515 ns</td><td>99,299.40 ns</td><td>92,816.32 ns</td><td>121,928.08 ns</td>
+</tr><tr><td>LinkedList</td><td>200000</td><td> 40.16 ns</td><td>0.9373 ns</td><td>0.9206 ns</td><td> 39.85 ns</td><td> 39.19 ns</td><td> 42.33 ns</td>
+</tr><tr><td>List</td><td>2000000</td><td>1,848,410.07 ns</td><td>36,593.1593 ns</td><td>81,845.8446 ns</td><td>1,809,651.23 ns</td><td>1,757,493.00 ns</td><td>2,037,888.09 ns</td>
+</tr><tr><td>LinkedList</td><td>2000000</td><td> 45.22 ns</td><td>0.9402 ns</td><td>2.4270 ns</td><td> 44.57 ns</td><td> 39.89 ns</td><td> 50.17 ns</td>
+</tr></tbody></table>
+</body>
+</html>
