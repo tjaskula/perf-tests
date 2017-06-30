@@ -180,6 +180,9 @@
     <Compile Include="Challenge5\Benchmark5.cs" />
     <Compile Include="Challenge5\Left.cs" />
     <Compile Include="Challenge5\Right.cs" />
+    <Compile Include="Challenge6\Benchmark6.cs" />
+    <Compile Include="Challenge6\Left.cs" />
+    <Compile Include="Challenge6\Right.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
