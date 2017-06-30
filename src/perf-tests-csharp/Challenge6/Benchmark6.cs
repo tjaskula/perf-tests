@@ -36,6 +36,6 @@ namespace perf_tests_csharp.Challenge6
         public void Multidimensional() => Left.Run(_matrix1);
 
         [Benchmark]
-        public void Jaggeed() => Right.Run(_matrix2);
+        public void Jagged() => Right.Run(_matrix2);
     }
 }
