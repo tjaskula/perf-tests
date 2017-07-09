@@ -2,15 +2,11 @@
 {
     public class Left
     {
-        public static void Run(int[][] matrix, int rowCount, int columnCount)
+        public static void Run(int count, int[] x, int[] result)
         {
-            var sum = 0;
-            for (var row = 0; row < rowCount; row++)
+            for (var index = 1; index < count; index++)
             {
-                for (var column = 0; column < columnCount; column++)
-                {
-                    sum += matrix[row][column];
-                }
+                result[index] = x[index] + result[index - 1];
             }
         }
     }
