@@ -8,6 +8,7 @@ using perf_tests_csharp.Challenge5;
 using perf_tests_csharp.Challenge5WorstCase;
 using perf_tests_csharp.Challenge6;
 using perf_tests_csharp.Challenge7;
+using perf_tests_csharp.Challenge8;
 
 namespace perf_tests_csharp
 {
@@ -24,7 +25,8 @@ namespace perf_tests_csharp
                 typeof(Benchmark5),
                 typeof(Benchmark5WorstCase),
                 typeof(Benchmark6),
-                typeof(Benchmark7)
+                typeof(Benchmark7),
+                typeof(Benchmark8)
             });
             switcher.Run(args);
         }
