@@ -11,7 +11,8 @@ namespace perf_tests_csharp.Challenge8
     public class Benchmark8
     {
         private static int[] _x;
-        private static int[] _result;
+        private static int[] _result1;
+        private static int[] _result2;
 
         [Params(10, 20, 200, 2000, 20000, 200000, 2000000)]
         public static int Count { get; set; }
@@ -20,14 +21,16 @@ namespace perf_tests_csharp.Challenge8
         public void SetupBenchmark8()
         {
             _x = Enumerable.Range(0, Count).ToArray();
-            _result = Enumerable.Range(0, Count).ToArray();
-            Array.Clear(_result, 0, Count);
+            _result1 = Enumerable.Range(0, Count).ToArray();
+            _result2 = Enumerable.Range(0, Count).ToArray();
+            Array.Clear(_result1, 0, Count);
+            Array.Clear(_result2, 0, Count);
         }
 
         [Benchmark]
-        public void Left() => Challenge8.Left.Run(Count, _x, _result);
+        public void Left() => Challenge8.Left.Run(Count, _x, _result1);
 
         [Benchmark]
-        public void Right() => Challenge8.Right.Run(Count, _x, _result);
+        public void Right() => Challenge8.Right.Run(Count, _x, _result2);
     }
 }
