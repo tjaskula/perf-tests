@@ -189,6 +189,9 @@
     <Compile Include="Challenge8\Benchmark8.cs" />
     <Compile Include="Challenge8\Left.cs" />
     <Compile Include="Challenge8\Right.cs" />
+    <Compile Include="Challenge9\Benchmark9.cs" />
+    <Compile Include="Challenge9\Left.cs" />
+    <Compile Include="Challenge9\Right.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
