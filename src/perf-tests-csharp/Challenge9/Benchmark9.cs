@@ -8,7 +8,7 @@ namespace perf_tests_csharp.Challenge9
     [MinColumn, MaxColumn]
     public class Benchmark9
     {
-        [Params(10, 20, 100, 1000, 10000, 100000, 1000000, 10000000)]
+        [Params(10, 20, 100, 1000, 10000, 100000)]
         public static int Count { get; set; }
 
         [Benchmark]
