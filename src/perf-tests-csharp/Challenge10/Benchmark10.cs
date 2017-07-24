@@ -20,9 +20,9 @@ namespace perf_tests_csharp.Challenge10
         }
 
         [Benchmark]
-        public void List() => Left.Run(_value);
+        public void Left() => Challenge10.Left.Run(_value);
 
         [Benchmark]
-        public void LinkedList() => Right.Run(_value);
+        public void Right() => Challenge10.Right.Run(_value);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Running;
 using perf_tests_csharp.Challenge1;
+using perf_tests_csharp.Challenge10;
 using perf_tests_csharp.Challenge2;
 using perf_tests_csharp.Challenge2bis;
 using perf_tests_csharp.Challenge3;
@@ -28,7 +29,8 @@ namespace perf_tests_csharp
                 typeof(Benchmark6),
                 typeof(Benchmark7),
                 typeof(Benchmark8),
-                typeof(Benchmark9)
+                typeof(Benchmark9),
+                typeof(Benchmark10)
             });
 
             switcher.Run(args);
