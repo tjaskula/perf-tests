@@ -2,10 +2,10 @@
 {
     public class Right
     {
-        public static void Run(int nbExecutions)
+        public static void Run(int nbExecutions, int a, int b)
         {
             for (int i = 1; i <= nbExecutions; i++)
-                GreatestCommonDivisor(1245654, 45621);
+                GreatestCommonDivisor(a, b);
         }
 
         private static int GreatestCommonDivisor(int a, int b)
