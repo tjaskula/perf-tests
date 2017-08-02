@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchmark11</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.6, OS=Windows 7 SP1 (6.1.7601)
+Processor=Intel Core i7-6600U CPU 2.60GHz (Skylake), ProcessorCount=4
+Frequency=2742275 Hz, Resolution=364.6607 ns, Timer=TSC
+  [Host]     : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.7.2053.0
+  DefaultJob : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.7.2053.0
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>  Method</th><th>ExecutionTimes</th><th>      Mean</th><th>      Error</th><th>     StdDev</th><th>    Median</th><th>       Min</th><th>       Max</th>
+</tr>
+</thead><tbody><tr><td>IterativeSmall</td><td>       1</td><td>  33.98 ns</td><td>  0.7022 ns</td><td>  1.0510 ns</td><td>  33.70 ns</td><td>  32.44 ns</td><td>  36.10 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>       1</td><td>  31.04 ns</td><td>  0.6544 ns</td><td>  0.7536 ns</td><td>  30.94 ns</td><td>  29.70 ns</td><td>  32.41 ns</td>
+</tr><tr><td>IterativeBig</td><td>       1</td><td>  21.06 ns</td><td>  0.4416 ns</td><td>  0.5085 ns</td><td>  20.84 ns</td><td>  20.41 ns</td><td>  22.18 ns</td>
+</tr><tr><td>RecursiveBig</td><td>       1</td><td>  16.80 ns</td><td>  0.2912 ns</td><td>  0.2432 ns</td><td>  16.78 ns</td><td>  16.40 ns</td><td>  17.16 ns</td>
+</tr><tr><td>IterativeSmall</td><td>      10</td><td> 333.25 ns</td><td>  6.6739 ns</td><td>  9.5715 ns</td><td> 327.87 ns</td><td> 320.94 ns</td><td> 354.13 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>      10</td><td> 304.68 ns</td><td>  8.1253 ns</td><td> 23.3129 ns</td><td> 295.05 ns</td><td> 280.89 ns</td><td> 360.98 ns</td>
+</tr><tr><td>IterativeBig</td><td>      10</td><td> 203.68 ns</td><td>  4.0638 ns</td><td>  4.6799 ns</td><td> 202.36 ns</td><td> 198.31 ns</td><td> 213.06 ns</td>
+</tr><tr><td>RecursiveBig</td><td>      10</td><td> 160.10 ns</td><td>  3.2014 ns</td><td>  5.1697 ns</td><td> 158.23 ns</td><td> 152.61 ns</td><td> 170.03 ns</td>
+</tr><tr><td>IterativeSmall</td><td>      20</td><td> 632.09 ns</td><td>  7.8826 ns</td><td>  6.9877 ns</td><td> 630.33 ns</td><td> 622.81 ns</td><td> 647.86 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>      20</td><td> 579.09 ns</td><td> 11.5025 ns</td><td> 11.2970 ns</td><td> 577.34 ns</td><td> 564.56 ns</td><td> 605.44 ns</td>
+</tr><tr><td>IterativeBig</td><td>      20</td><td> 410.97 ns</td><td>  7.9358 ns</td><td>  8.8207 ns</td><td> 406.64 ns</td><td> 399.39 ns</td><td> 427.71 ns</td>
+</tr><tr><td>RecursiveBig</td><td>      20</td><td> 309.69 ns</td><td>  6.1242 ns</td><td>  6.0148 ns</td><td> 308.37 ns</td><td> 297.96 ns</td><td> 321.04 ns</td>
+</tr><tr><td>IterativeSmall</td><td>     200</td><td>6,327.95 ns</td><td>104.7099 ns</td><td> 97.9457 ns</td><td>6,310.84 ns</td><td>6,188.66 ns</td><td>6,483.10 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>     200</td><td>5,804.95 ns</td><td>110.4413 ns</td><td>108.4681 ns</td><td>5,818.85 ns</td><td>5,641.94 ns</td><td>5,998.30 ns</td>
+</tr><tr><td>IterativeBig</td><td>     200</td><td>4,092.93 ns</td><td> 78.5986 ns</td><td> 80.7150 ns</td><td>4,071.46 ns</td><td>3,988.00 ns</td><td>4,240.75 ns</td>
+</tr><tr><td>RecursiveBig</td><td>     200</td><td>3,083.26 ns</td><td> 74.4579 ns</td><td> 94.1654 ns</td><td>3,063.90 ns</td><td>2,928.16 ns</td><td>3,364.41 ns</td>
+</tr><tr><td>IterativeSmall</td><td>    2000</td><td>63,111.11 ns</td><td>1,637.2469 ns</td><td>1,531.4816 ns</td><td>62,854.71 ns</td><td>61,489.32 ns</td><td>66,509.64 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>    2000</td><td>57,993.58 ns</td><td>1,137.0016 ns</td><td>1,309.3727 ns</td><td>57,900.55 ns</td><td>56,626.66 ns</td><td>61,237.89 ns</td>
+</tr><tr><td>IterativeBig</td><td>    2000</td><td>43,679.78 ns</td><td>1,940.3197 ns</td><td>4,867.8828 ns</td><td>41,202.69 ns</td><td>39,868.07 ns</td><td>52,776.98 ns</td>
+</tr><tr><td>RecursiveBig</td><td>    2000</td><td>30,098.87 ns</td><td>599.4128 ns</td><td>897.1728 ns</td><td>30,001.08 ns</td><td>28,943.93 ns</td><td>32,186.30 ns</td>
+</tr><tr><td>IterativeSmall</td><td>   20000</td><td>633,399.14 ns</td><td>12,212.2787 ns</td><td>14,537.8490 ns</td><td>627,248.31 ns</td><td>611,905.49 ns</td><td>659,295.01 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>   20000</td><td>575,886.04 ns</td><td>10,109.5453 ns</td><td>9,456.4740 ns</td><td>576,082.83 ns</td><td>562,979.97 ns</td><td>593,258.56 ns</td>
+</tr><tr><td>IterativeBig</td><td>   20000</td><td>409,347.54 ns</td><td>4,993.6640 ns</td><td>4,169.9352 ns</td><td>408,658.62 ns</td><td>401,440.01 ns</td><td>418,193.57 ns</td>
+</tr><tr><td>RecursiveBig</td><td>   20000</td><td>305,357.31 ns</td><td>6,082.9958 ns</td><td>9,822.9043 ns</td><td>304,590.90 ns</td><td>291,438.10 ns</td><td>325,107.97 ns</td>
+</tr><tr><td>IterativeSmall</td><td>  200000</td><td>6,344,797.54 ns</td><td>110,563.7374 ns</td><td>103,421.3785 ns</td><td>6,349,866.14 ns</td><td>6,164,125.63 ns</td><td>6,540,324.45 ns</td>
+</tr><tr><td>RecursiveSmall</td><td>  200000</td><td>5,748,313.89 ns</td><td>80,461.2406 ns</td><td>71,326.7871 ns</td><td>5,742,573.74 ns</td><td>5,635,832.13 ns</td><td>5,875,143.59 ns</td>
+</tr><tr><td>IterativeBig</td><td>  200000</td><td>4,100,878.63 ns</td><td>85,987.7792 ns</td><td>108,747.0085 ns</td><td>4,067,114.57 ns</td><td>3,985,863.60 ns</td><td>4,385,904.96 ns</td>
+</tr><tr><td>RecursiveBig</td><td>  200000</td><td>3,006,323.49 ns</td><td>57,264.5732 ns</td><td>53,565.3121 ns</td><td>2,995,046.17 ns</td><td>2,923,341.90 ns</td><td>3,120,451.00 ns</td>
+</tr><tr><td>IterativeSmall</td><td> 2000000</td><td>63,446,560.49 ns</td><td>1,145,231.0680 ns</td><td>1,071,249.7474 ns</td><td>63,532,624.98 ns</td><td>62,248,745.72 ns</td><td>65,315,610.82 ns</td>
+</tr><tr><td>RecursiveSmall</td><td> 2000000</td><td>58,006,072.74 ns</td><td>606,808.3167 ns</td><td>473,755.9785 ns</td><td>57,893,607.19 ns</td><td>57,108,834.51 ns</td><td>58,915,819.59 ns</td>
+</tr><tr><td>IterativeBig</td><td> 2000000</td><td>41,000,054.70 ns</td><td>778,900.4464 ns</td><td>833,414.6741 ns</td><td>40,935,654.10 ns</td><td>39,908,746.69 ns</td><td>42,812,676.82 ns</td>
+</tr><tr><td>RecursiveBig</td><td> 2000000</td><td>30,484,766.38 ns</td><td>598,498.4884 ns</td><td>1,032,380.4865 ns</td><td>30,191,239.08 ns</td><td>29,020,723.72 ns</td><td>33,117,504.68 ns</td>
+</tr></tbody></table>
+</body>
+</html>
