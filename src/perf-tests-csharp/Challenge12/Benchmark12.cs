@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Attributes.Columns;
 using BenchmarkDotNet.Attributes.Exporters;
@@ -11,28 +9,21 @@ namespace perf_tests_csharp.Challenge12
     [MinColumn, MaxColumn]
     public class Benchmark12
     {
-        private Random _rdn;
-        private List<int> _items1;
-        private LinkedList<int> _items2;
-        private int _value;
+        private static int[] _values;
 
-        [Params(10, 20, 200, 2000, 20000, 200000, 2000000)]
+        [Params(10, 20, 100, 1000, 10000, 100000, 1000000, 10000000)]
         public static int NbElements { get; set; }
 
         [Setup]
         public void SetupBenchmark12()
         {
-            var values = Enumerable.Range(0, NbElements).ToList();
-            _rdn = new Random();
-            _value = _rdn.Next(0, NbElements);
-            _items1 = values;
-            _items2 = new LinkedList<int>(values);
+            _values = Enumerable.Range(0, NbElements).ToArray();
         }
 
         [Benchmark]
-        public void List() => Left.Run(_value, _items1);
+        public void Left() => Challenge12.Left.Run(ref _values);
 
         [Benchmark]
-        public void LinkedList() => Right.Run(_value, _items2);
+        public void Right() => Challenge12.Right.Run(ref _values);
     }
 }
