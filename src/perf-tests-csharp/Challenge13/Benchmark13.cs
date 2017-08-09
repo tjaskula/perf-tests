@@ -12,15 +12,9 @@ namespace perf_tests_csharp.Challenge13
         public static int ExecutionTimes { get; set; }
 
         [Benchmark]
-        public void IterativeSmall() => Left.Run(ExecutionTimes, 1245654, 45621);
+        public void Now() => Left.Run(ExecutionTimes);
 
         [Benchmark]
-        public void RecursiveSmall() => Right.Run(ExecutionTimes, 1245654, 45621);
-
-        [Benchmark]
-        public void IterativeBig() => Left.Run(ExecutionTimes, 3918848, 1653264);
-
-        [Benchmark]
-        public void RecursiveBig() => Right.Run(ExecutionTimes, 3918848, 1653264);
+        public void UtcNow() => Right.Run(ExecutionTimes);
     }
 }
