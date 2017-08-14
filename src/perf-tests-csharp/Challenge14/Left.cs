@@ -2,13 +2,15 @@
 {
     public class Left
     {
-        public static void Run(ref int[] vals)
+        public static unsafe void Run(ref int[] vals)
         {
             var sum = 0L;
-            var values = vals;
-            for (var i = 0; i < values.Length; i++)
+            fixed (int* values = vals)
             {
-                sum += values[i];
+                for (var i = 0; i < vals.Length; i++)
+                {
+                    sum += values[i];
+                }
             }
         }
     }

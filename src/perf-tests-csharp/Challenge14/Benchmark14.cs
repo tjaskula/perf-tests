@@ -15,7 +15,7 @@ namespace perf_tests_csharp.Challenge12
         public static int NbElements { get; set; }
 
         [Setup]
-        public void SetupBenchmark12()
+        public void SetupBenchmark14()
         {
             _values = Enumerable.Range(0, NbElements).ToArray();
         }
