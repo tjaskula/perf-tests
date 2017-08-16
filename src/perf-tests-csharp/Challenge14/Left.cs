@@ -1,13 +1,22 @@
-﻿namespace perf_tests_csharp.Challenge14
+﻿using System.Linq;
+
+namespace perf_tests_csharp.Challenge14
 {
     public class Left
     {
-        public static unsafe void Run(ref int[] vals)
+        private readonly int[] _values;
+
+        public Left(int nbElements)
+        {
+            _values = Enumerable.Range(0, nbElements).ToArray();
+        }
+
+        public unsafe void Run()
         {
             var sum = 0L;
-            fixed (int* values = vals)
+            fixed (int* values = _values)
             {
-                for (var i = 0; i < vals.Length; i++)
+                for (var i = 0; i < _values.Length; i++)
                 {
                     sum += values[i];
                 }

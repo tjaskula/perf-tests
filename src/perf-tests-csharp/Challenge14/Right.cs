@@ -1,13 +1,22 @@
-﻿namespace perf_tests_csharp.Challenge14
+﻿using System.Linq;
+
+namespace perf_tests_csharp.Challenge14
 {
     public class Right
     {
-        public static void Run(ref int[] vals)
+        private readonly int[] _values;
+
+        public Right(int nbElements)
+        {
+            _values = Enumerable.Range(0, nbElements).ToArray();
+        }
+
+        public void Run()
         {
             var sum = 0L;
-            for (var i = 0; i < vals.Length; i++)
+            for (var i = 0; i < _values.Length; i++)
             {
-                sum += vals[i];
+                sum += _values[i];
             }
         }
     }

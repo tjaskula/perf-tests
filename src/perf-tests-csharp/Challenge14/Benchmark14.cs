@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Attributes.Columns;
 using BenchmarkDotNet.Attributes.Exporters;
 
@@ -9,7 +8,8 @@ namespace perf_tests_csharp.Challenge14
     [MinColumn, MaxColumn]
     public class Benchmark14
     {
-        private static int[] _values;
+        private Left _left;
+        private Right _right;
 
         [Params(10, 20, 100, 1000, 10000, 100000, 1000000, 10000000)]
         public static int NbElements { get; set; }
@@ -17,13 +17,14 @@ namespace perf_tests_csharp.Challenge14
         [Setup]
         public void SetupBenchmark14()
         {
-            _values = Enumerable.Range(0, NbElements).ToArray();
+            _left = new Left(NbElements);
+            _right = new Right(NbElements);
         }
 
         [Benchmark]
-        public void Left() => Challenge14.Left.Run(ref _values);
+        public void Left() => _left.Run();
 
         [Benchmark]
-        public void Right() => Challenge14.Right.Run(ref _values);
+        public void Right() => _right.Run();
     }
 }
