@@ -12,7 +12,7 @@ namespace perf_tests_csharp.Challenge15
     {
         private List<int> _values;
 
-        [Params(10, 20, 200, 2000, 20000, 200000, 2000000)]
+        [Params(10, 20, 200, 500, 2000, 20000, 200000, 2000000)]
         public static int NbElements { get; set; }
 
         [Setup]
